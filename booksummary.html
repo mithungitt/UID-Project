@@ -182,7 +182,7 @@ input[type="text"] {
         const query = document.getElementById("search").value;
         const googleBooksAPI = `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(query)}`;
         const bookList = document.querySelector(".book-list");
-    
+        var authorslist = []; // List to store all authors
         bookList.innerHTML = ""; // Clear existing content
     
         fetch(googleBooksAPI)
@@ -197,6 +197,11 @@ input[type="text"] {
                         const thumbnail = volumeInfo.imageLinks ? volumeInfo.imageLinks.thumbnail : null;
                         const previewLink = volumeInfo.previewLink; // Link to preview the book
                         let isbn = "N/A";
+    
+                        // Add author to the list, avoiding duplicates
+                        if (author && !authorslist.includes(author)) {
+                            authorslist.push(author);
+                        }
     
                         if (volumeInfo.industryIdentifiers) {
                             const isbnIdentifier = volumeInfo.industryIdentifiers.find(
@@ -217,7 +222,7 @@ input[type="text"] {
                         bookHTML += `<p>Author: ${author}</p>`;
                         bookHTML += `<p>Published Year: ${publishedYear}</p>`;
                         bookHTML += `<p>ISBN: ${isbn}</p>`; // Display the ISBN
-    
+                        
                         if (previewLink) {
                             bookHTML += `<a href="${previewLink}" target="_blank">Preview</a>`; // Link to book preview
                         }
@@ -225,6 +230,13 @@ input[type="text"] {
                         book.innerHTML = bookHTML;
                         bookList.appendChild(book);
                     });
+    
+                    // Choose a random author and store in local storage
+                    if (authorslist.length > 0) {
+                        const randomAuthor = authorslist[Math.floor(Math.random() * authorslist.length)];
+                        localStorage.setItem("recommend", randomAuthor);
+                        console.log(randomAuthor)
+                    }
                 } else {
                     bookList.innerHTML = "No books found.";
                 }
