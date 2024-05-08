@@ -11,7 +11,11 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background-color: purple;
+  background-image: url("https://wallpapers.com/images/hd/slides-presentation-background-fw7p0kszsbb8dx7c.jpg");
+  background-size: 100%;
+  background-position: bottom right;
+  background-size: cover;
+  
 }
 
 .navbar {
@@ -192,7 +196,7 @@ input[type="text"] {
   height: 342px; /* Fixed height for consistent appearance */
   text-align: center;
   list-style: none;
-  background: pink; /* Background color for each card */
+  background-image: radial-gradient(rgba(255, 255, 255, 0.681),rgba(206, 118, 3, 0.736));
   cursor: pointer; /* Indicates interactivity */
   padding-bottom: 15px; /* Padding for content */
   flex-direction: column; /* Vertical arrangement */
@@ -200,7 +204,7 @@ input[type="text"] {
 }
 
 .carousel .card .img {
-  background: #8B53FF;
+  background: grey;
   height: 200px;
   width: 148px;
   border-radius: 5%;

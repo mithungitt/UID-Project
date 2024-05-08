@@ -1,7 +1,9 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: pink;
+    font-size: large ;
+    font-weight:bolder;
+    background-image: url("https://storydoc.mo.cloudinary.net/prd/36a3a2a42b5b702f/a10b121a-3041-443f-9c14-dea5b8599e6d");
 }
 
 .navbar {
