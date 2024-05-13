@@ -1,0 +1,16 @@
+{
+  "name": "uid-project",
+  "version": "1.0.0",
+  "description": "index.html is the main home page of our project from where the user can move to other connected pages of our project through hyperlinks and icons provided",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7"
+  }
+}
