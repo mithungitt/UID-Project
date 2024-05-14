@@ -16,8 +16,6 @@ https://github.com/mobalti/layout-craft/blob/main/lib/utilities.css
   :root {
     font-family: 'Inter', sans-serif;
     --surface-1: black;
-    --surface-2: oklch(0.19 0 0);
-    --surface-3: pink;
     --text-1: white;
 
     --brand-1: oklch(0.65 0.24 16.93);
@@ -404,4 +402,19 @@ a:active {
   color: black;
   background-color: transparent;
   text-decoration: underline;
+}
+body {
+  background-image: url('https://wallpapers.com/images/hd/slides-presentation-background-fw7p0kszsbb8dx7c.jpg');
+  background-size: cover; /* Adjust as needed */
+}
+
+/* Or, if you want to target the main element */
+main {
+  background-image: url('https://wallpapers.com/images/hd/slides-presentation-background-fw7p0kszsbb8dx7c.jpg');
+  background-size: cover; /* Adjust as needed */
+}
+
+
+.subhead{
+  color: brown;
 }

@@ -96,25 +96,25 @@ input[type="text"] {
 
 .slideshow-container {
   width: 100%;
-  max-width: 400px; /* Ensures proper content fit */
+  max-width: 400px; 
   position: relative;
   margin: auto;
   overflow: hidden;
 }
 
 .slide {
-  display: block; /* Ensure slides are visible by default */
-  padding: 20px; /* Padding for content within the box */
-  background-color: white; /* Background for the box */
-  border-radius: 15px; /* Rounded corners for the box */
-  border: 2px solid black; /* Border for the box */
-  margin-bottom: 20px; /* Space between slides */
+  display: block;
+  padding: 20px; 
+  background-color: white; 
+  border-radius: 15px; 
+  border: 2px solid black;
+  margin-bottom: 20px; 
 }
 
 .slide img {
-  border-radius: 10px; /* Ensures smooth corners */
-  width: 100%; /* Avoid distortion by filling the width */
-  height: auto; /* Maintains aspect ratio */
+  border-radius: 10px;
+  width: 100%; 
+  height: auto;
   object-fit: cover;
 }
 
@@ -140,11 +140,11 @@ input[type="text"] {
 .wrapper {
   max-width: 1200px;
   position: relative;
-  margin: 0 auto; /* Center horizontally */
+  margin: 0 auto;
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  height: 90vh; /* Full vertical height for carousel */
+  justify-content: center;
+  align-items: center;
+  height: 90vh; 
 }
 
 .wrapper i {
@@ -178,13 +178,13 @@ input[type="text"] {
 .carousel {
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: calc(100% / 4 - 16px); /* Ensures proper column layout */
-  overflow-x: auto; /* Enables horizontal scrolling */
+  grid-auto-columns: calc(100% / 4 - 16px); 
+  overflow-x: auto; 
   scroll-snap-type: x mandatory;
-  gap: 16px; /* Gap between cards */
+  gap: 16px; 
   border-radius: 8px;
   scroll-behavior: smooth;
-  scrollbar-width: none; /* Hides scrollbar for clean look */
+  scrollbar-width: none; 
 }
 
 .carousel::-webkit-scrollbar {
@@ -192,15 +192,15 @@ input[type="text"] {
 }
 
 .carousel .card {
-  scroll-snap-align: start; /* Aligns at the start */
-  height: 342px; /* Fixed height for consistent appearance */
+  scroll-snap-align: start; 
+  height: 342px; 
   text-align: center;
   list-style: none;
   background-image: radial-gradient(rgba(255, 255, 255, 0.681),rgba(206, 118, 3, 0.736));
-  cursor: pointer; /* Indicates interactivity */
-  padding-bottom: 15px; /* Padding for content */
-  flex-direction: column; /* Vertical arrangement */
-  border-radius: 8px; /* Rounded corners */
+  cursor: pointer; 
+  padding-bottom: 15px; 
+  flex-direction: column; 
+  border-radius: 8px; 
 }
 
 .carousel .card .img {
@@ -214,29 +214,29 @@ input[type="text"] {
   width: 140px;
   height: 190px;
   border-radius: 5%;
-  object-fit: cover; /* Ensures proper aspect ratio */
-  border: 4px solid black; /* Distinct border */
+  object-fit: cover; 
+  border: 4px solid black; 
 }
 
 .carousel .card h2 {
   font-weight: 500;
   font-size: 1.56rem;
-  margin: 30px 0 5px; /* Spacing for the heading */
+  margin: 30px 0 5px; 
 }
 
 .carousel .card span {
-  color: #6A6D78; /* Secondary text color */
+  color: #6A6D78; 
   font-size: 1.31rem;
 }
 
 @media screen and (max-width: 900px) {
   .wrapper .carousel {
-    grid-auto-columns: calc((100% / 2) - 9px); /* Adjusts columns for smaller screens */
+    grid-auto-columns: calc((100% / 2) - 9px); 
   }
 }
 
 @media screen and (max-width: 600px) {
   .wrapper .carousel {
-    grid-auto-columns: 100%; /* Full-width for smaller screens */
+    grid-auto-columns: 100%; 
   }
 }

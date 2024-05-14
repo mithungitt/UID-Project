@@ -1,11 +1,9 @@
-// searchBooks function to query Google Books API with ISBN
 function searchBooks() {
     const bookSearchInput = document.getElementById('booksearch');
     const query = encodeURIComponent(bookSearchInput.value);
     const slider = document.getElementById('slider');
-    slider.innerHTML = ""; // Clear existing content
+    slider.innerHTML = ""; 
 
-    // Use the ISBN endpoint to get book information
     const googleBooksAPI = `https://www.googleapis.com/books/v1/volumes?q=isbn:${query}`;
 
     fetch(googleBooksAPI)
@@ -20,9 +18,8 @@ function searchBooks() {
                     const thumbnail = volumeInfo.imageLinks ? volumeInfo.imageLinks.thumbnail : null;
 
                     const slide = document.createElement("div");
-                    slide.className = "slide"; // Create a new slide
+                    slide.className = "slide"; 
 
-                    // Build the HTML with book summary and thumbnail
                     slide.innerHTML = `
                         <h2>${title}</h2>
                         <p><strong>Author:</strong> ${authors}</p>
@@ -30,7 +27,7 @@ function searchBooks() {
                         ${thumbnail ? `<img src="${thumbnail}" alt="${title} cover">` : ""}
                     `;
 
-                    slider.appendChild(slide); // Add the slide to the container
+                    slider.appendChild(slide); 
                 });
 
             } else {

@@ -2,33 +2,31 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const bcrypt = require('bcryptjs');
-const mysql = require('mysql2/promise'); // Import mysql2/promise for async/await support
+const mysql = require('mysql2/promise'); 
 const path = require('path');
+require('dotenv').config();
 
 const app = express();
-const port = 9012;
+const port = 9015;
 
-// Initialize session middleware
 app.use(session({
-    secret: 'your_secret_key',
+    secret: 'my_new_secret_key',
     resave: false,
     saveUninitialized: true
 }));
 
-// Middleware to parse JSON bodies
 app.use(bodyParser.json());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Configure MySQL connection pool
 const pool = mysql.createPool({
-    host: 'localhost',
-    user: 'qwerty123',
-    password: 'Qwerty_12345',
-    database: 'uid'
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE
 });
 
-// Initialize database and tables
+// db and tables
 async function initializeDatabase() {
     try {
         const connection = await pool.getConnection();
@@ -44,7 +42,6 @@ async function initializeDatabase() {
 
 initializeDatabase();
 
-// Endpoint for user registration
 app.post('/register', async (req, res) => {
     const { username, password } = req.body;
     const hashedPassword = bcrypt.hashSync(password, 10);
@@ -75,11 +72,9 @@ app.post('/login', async (req, res) => {
             return;
         }
 
-        // Set session data upon successful login
         req.session.userId = results[0].id;
         req.session.username = results[0].username;
 
-        // Redirect the user to the index page
         res.redirect('/index');
     } catch (error) {
         console.error('Error logging in:', error);
@@ -87,12 +82,10 @@ app.post('/login', async (req, res) => {
     }
 });
 
-// Route to serve login page
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'html', 'login page.html'));
 });
 
-// Route to serve index.html if user is authenticated
 app.get('/index', (req, res) => {
     if (req.session.userId && req.session.username) {
         res.sendFile(path.join(__dirname, 'public', 'html', 'index.html'));
@@ -101,7 +94,6 @@ app.get('/index', (req, res) => {
     }
 });
 
-// Start server
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
