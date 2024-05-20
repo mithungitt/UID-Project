@@ -29,7 +29,7 @@ To run this application, you need to have the following installed on your system
 
 3. **Configure the Database**
     - Create a database in MySQL.
-    - Update the database configuration in the `config/database.js` file with your MySQL credentials.
+    - Update the database configuration in the `app.js` or env  file with your MySQL credentials.
 
     ```js
     module.exports = {
