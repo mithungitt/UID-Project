@@ -68,8 +68,6 @@ To run this application, you need to have the following installed on your system
 ## Project Structure
 - `app.js`: Main application file.
 - `public/`: Contains the static files (HTML, CSS).
-- `routes/`: Contains the route handlers.
-- `config/`: Contains configuration files for the database.
 
 ## Contribution
 Contributions are welcome! Please fork the repository and submit a pull request for any enhancements or bug fixes.
