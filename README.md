@@ -36,7 +36,7 @@ To run this application, you need to have the following installed on your system
         host: 'localhost',
         user: 'your-username',
         password: 'your-password',
-        database: 'e_library'
+        database: 'uid'
     };
     ```
 
